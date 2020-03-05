@@ -1,0 +1,35 @@
+CREATE TABLE `account_records` (
+  `NIC` varchar(30) NOT NULL,
+  `EMAIL` varchar(30) DEFAULT NULL,
+  `PASSWORD` varchar(50) DEFAULT NULL,
+  `FIRST_NAME` varchar(20) DEFAULT NULL,
+  `LAST_NAME` varchar(20) DEFAULT NULL,
+  `DOB` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`NIC`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `comments` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `COMMENT` longtext,
+  `BY_MP` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `nic_records` (
+  `NIC` varchar(30) NOT NULL,
+  `MP` int(11) DEFAULT NULL,
+  `USED` int(11) DEFAULT NULL,
+  PRIMARY KEY (`NIC`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `petitions` (
+  `ID` int(11) NOT NULL,
+  `TITLE` varchar(80) DEFAULT NULL,
+  `CONTENT` longtext,
+  `DATE` date DEFAULT NULL,
+  `CREATOR` varchar(45) DEFAULT NULL,
+  `SIGN` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+

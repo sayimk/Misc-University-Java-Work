@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Account Registration</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body onload="disableSubmit()">
+<h1>e-Petition Account Creation</h1>
+<br/>
+<h3>Please fill in the required details below for account creation:</h3>
+
+<form action="/e-Petition_System/registration-submit" method="post">
+
+
+
+<h4 id="error"> </h4>
+<h4 id="error1"> </h4>
+<h4 id="error2"> </h4>
+
+
+<h3>First Name:</h3>
+<input type="text" class="Data" name="firstName" id="firstName" onkeyup="presenseCheck()"></input>
+
+<h3>Last Name:</h3>
+<input type="text" class="Data" name="lastName" id="lastName" onkeyup="presenseCheck()"></input>
+
+<h3>Date of Birth</h3>
+<input type="date" class="Data" name="dateOfBirth" id="dateOfBirth"></input>
+
+<h3>E-mail Address</h3>
+<input type="text" class="Data" name="emailAddress" id="emailAddress" onkeyup="emailCheck()"></input>
+<h4 id="emailError"></h4>
+
+<h3>Confirm E-mail Address</h3>
+<input type="text" class="Data" name="confirmEmailAddress" id="confirmEmailAddress" onkeyup="emailCheck()"></input>
+
+<h3>Password</h3>
+<input type="text" name="password" id="password" onkeyup="passwordCheck()"></input>
+
+<h3>Confirm Password</h3>
+<input type="text" class="Data" name="confirmPassword" id="confirmPassword" onkeyup="passwordCheck()"></input>
+
+<h3>NIC</h3>
+<input type="text" class="Data" name="nic" id="nic" onkeyup="presenseCheck()"></input>
+
+<br/>
+<button type="submit" id="submitButton">Submit</button>
+</form>
+
+<script>
+
+$(document).ready(function(){
+	 $(".Data").keyup(function(){
+	 $.ajax({
+	 type: "GET",
+	 url: "./AjaxEmailChecker?email="+$('#emailAddress').val(),
+	 success: function(result){
+	 $("#emailError").html(result);
+	 //$("#emailError").attr("disabled",true);
+	 }}); });
+	});
+
+
+
+function emailCheck(){
+	if(document.getElementById('emailAddress').value===document.getElementById('confirmEmailAddress').value){
+		document.getElementById('error').innerHTML=""
+	}else {
+		document.getElementById('error').innerHTML="Email Addresses do not match"
+	}
+	disableSubmit()
+	presenseCheck()
+}
+
+function presenseCheck(){
+	if((document.getElementById('firstName').value!="")&&(document.getElementById('lastName').value!="")&&
+			(document.getElementById('emailAddress').value!="")&&(document.getElementById('confirmEmailAddress').value!="")
+			&&(document.getElementById('password').value!="")&&(document.getElementById('confirmPassword').value!="")
+			&&(document.getElementById('nic').value!="")){
+		document.getElementById('error2').innerHTML=""
+	}else {
+		document.getElementById('error2').innerHTML="Please Fill Empty Fields"
+	}
+	disableSubmit()
+	presenseCheck()
+}
+
+function passwordCheck(){
+	if(document.getElementById('confirmPassword').value===document.getElementById('password').value){
+		document.getElementById('error1').innerHTML=""
+	}else {
+		document.getElementById('error1').innerHTML="Passwords do not match"
+	}
+	disableSubmit()
+}
+
+function disableSubmit(){
+	if ((document.getElementById('error').innerHTML=="")&&(document.getElementById('error1').innerHTML=="")&&(document.getElementById('error1').innerHTML=="")){
+		document.getElementById('submitButton').disabled=false
+	}else{
+		document.getElementById('submitButton').disabled=true
+	}
+}
+</script>
+
+
+</body>
+</html>

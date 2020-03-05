@@ -1,0 +1,26 @@
+my code was tested on Ubuntu 16 64-bit and was written and tested on Windows 10 64-bit
+
+To Start RMI Registry
+1. Navigate to Query-Server folder
+2. Navigate to the Bin folder
+3. Start RMI Registry
+
+To run the Server:
+1. Navigate to Query-Server folder
+2. Navigate to src folder
+3. run java client.QueryServer
+
+To run the Client:
+1. Navigate to the QueryClient folder
+2. Navigate to the src folder
+3. run java client.QueryClient {File to be Queried} {Query1} {Query 2}
+
+NOTE: files to query are HousesPrices.csv and CarFuel.csv
+
+NOTE: this RMI Server and Client do NOT USE Codebase as this is a localhost example, thus RMIRegistry must be executed in the BIN Folder
+
+NOTE: only the location of the Security.policy file is auto-set during server execution and will be set to Query-Server/src/Security.policy
+
+NOTE: to query date and price in CarFuel, date must be Query1 and price must be Query 2
+
+NOTE: to query dates in HousesPrices use - e.g 2017- , 11-

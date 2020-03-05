@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Creating a new Petition</title>
+</head>
+<body>
+	<h1>Welcome to the petition creation Page, this is where you can create new petitions for Shangri-la</h1>
+	<h2 id="error"> </h2>
+
+	<form action="/e-Petition_System/PublishPetition" method="post">
+
+		<h2>Petition Title:</h2>
+		<input type="text" id="petitionTitle" name="petitionTitle" onkeyup='PresenceCheck()'>
+		<br/>
+
+		<h2>Petition Contents</h2>
+		<input type="text" id="petitionContents" name="petitionContents" onkeyup='PresenceCheck()'>
+
+		<input type="submit" value="Create"/>
+	</form>
+	
+	<script type="text/javascript">
+
+		function PresenceCheck(){
+			
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+
+grant codeBase "file:D:\OneDrive\Java Eclipse Projects\CO3090 Distrubuted Systems\Coursework_2\query-server/bin-" {
+	permission java.security.AllPermission;
+ };
