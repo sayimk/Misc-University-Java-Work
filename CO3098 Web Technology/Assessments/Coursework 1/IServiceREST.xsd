@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="service">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="inherit" type="inherit" minOccurs="0"></xs:element>
+			<xs:element name="package" type="xs:string"></xs:element>
+			<xs:element name="include" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+			<xs:element name="abstract_method" type="abstract_method" minOccurs="0" maxOccurs="unbounded"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string"/>
+	</xs:complexType>
+</xs:element>
+
+<xs:complexType name="abstract_method">
+	<xs:sequence>
+		<xs:element name="visibility" type="xs:string" minOccurs="0"></xs:element>
+		<xs:element name="parameters" type="parameters" minOccurs="0"></xs:element>
+		<xs:element name="throw" type="throw" minOccurs="0"></xs:element>
+		<xs:element name="return" type="xs:string"></xs:element>
+	</xs:sequence>
+	<xs:attribute name="id" type="xs:string"/>
+	
+</xs:complexType>
+
+<xs:complexType name="inherit">
+	<xs:sequence>
+		<xs:element name="parent" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+	</xs:sequence>
+</xs:complexType>
+
+
+<xs:complexType name="parameters">
+	<xs:sequence>
+		<xs:element name="argument" type="argument" minOccurs="0" maxOccurs="unbounded"></xs:element>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="argument">
+	<xs:simpleContent>
+      	<xs:extension base="xs:string">
+			<xs:attribute name="type" type="xs:string"/>
+		</xs:extension>
+
+	</xs:simpleContent>
+
+</xs:complexType>
+
+
+<xs:complexType name="throw">
+	<xs:sequence>
+		<xs:element name="exception" type="xs:string" minOccurs="0" maxOccurs="unbounded"></xs:element>
+	</xs:sequence>
+</xs:complexType>
+
+</xs:schema>

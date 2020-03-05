@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>e-Petition_System</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<servlet-class>LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>AjaxEmailChecker</servlet-name>
+  	<servlet-class>AjaxEmailChecker</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AjaxEmailChecker</servlet-name>
+  	<url-pattern>/AjaxEmailChecker</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+  	<servlet-name>CommentPetition</servlet-name>
+  	<servlet-class>CommentPetition</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CommentPetition</servlet-name>
+  	<url-pattern>/CommentPetition</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+  	<servlet-name>GetPetitionPage</servlet-name>
+  	<servlet-class>GetPetitionPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>GetPetitionPage</servlet-name>
+  	<url-pattern>/GetPetitionPage</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+  	<servlet-name>PetitionSignServlet</servlet-name>
+  	<servlet-class>PetitionSignServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>PetitionSignServlet</servlet-name>
+  	<url-pattern>/SignPetition</url-pattern>
+  </servlet-mapping>
+  
+        <servlet>
+  	<servlet-name>AjaxSignCheck</servlet-name>
+  	<servlet-class>AjaxSignCheck</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AjaxSignCheck</servlet-name>
+  	<url-pattern>/AjaxSignCheck</url-pattern>
+  </servlet-mapping>
+    
+    <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<servlet-class>LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>getLoginPage</servlet-name>
+  	<servlet-class>getLoginPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>getLoginPage</servlet-name>
+  	<url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>registrationServlet</servlet-name>
+  	<servlet-class>registrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>registrationServlet</servlet-name>
+  	<url-pattern>/registration-submit</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>PublishPetition</servlet-name>
+  	<servlet-class>PublishPetition</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>PublishPetition</servlet-name>
+  	<url-pattern>/PublishPetition</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

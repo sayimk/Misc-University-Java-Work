@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="IServiceREST">
+			<inherit>
+				<parent>Remote</parent>
+			</inherit>
+			<package>uk.ac.le.cs.module</package>
+			<include>java.rmi.Remote</include>
+			<include>java.net.*</include>
+			<include>java.io.*</include>
+			<abstract_method id="getContent">
+				<visibility>public</visibility>
+				<parameters>
+					<argument type="URL">url</argument>
+					<argument type="int">timeout</argument>
+				</parameters>
+				<throw>
+					<exception>MalformedURLException</exception>
+					<exception>IOException</exception>
+				</throw>
+				<return>String</return>
+			</abstract_method>
+			<abstract_method id="deleteUser">
+				<visibility>public</visibility>
+				<parameters>
+					<argument type="String">username</argument>
+				</parameters>
+				<return>void</return>
+			</abstract_method>
+</service>	
+
